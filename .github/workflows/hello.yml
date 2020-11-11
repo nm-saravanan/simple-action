@@ -1,10 +1,13 @@
----
-# This playbook prints a simple debug message
-- name: Print 
-  hosts: 127.0.0.1
-  connection: local
+name: Shell Command
+on: [push]
 
-  tasks:
-  - name: Print  message
-    debug:
-      msg: Hello, world!
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print a strng
+        run: echo "Hello......"
+      - name: multi script
+        run: |
+          node -v
+          npm -v

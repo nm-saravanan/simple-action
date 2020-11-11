@@ -8,8 +8,8 @@ jobs:
     steps:
       - name: simple js action
         id: greet
-        uses: actions/hello-world-javascript-action@v1
+        uses: saubermacherag/ansible-playbook-docker-action@v1.3
         with:
-            who-to-greet: Saravanan
+            playbookName: 'play1.yml'
       - name: Log the time
         run: echo "{{steps.greet.outputs.time}}"

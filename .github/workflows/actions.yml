@@ -9,11 +9,13 @@ jobs:
       - name: List files
         run: :|
           pwd
-          ls
+          ls -a
+      - name: check out
+        uses: actions/checkout
       - name: simple js action
         id: greet
         uses: saubermacherag/ansible-playbook-docker-action@v1.3
         with:
-            playbookName: './play1.yml'
+            playbookName: 'play1.yml'
       - name: Log the time
         run: echo "{{steps.greet.outputs.time}}"

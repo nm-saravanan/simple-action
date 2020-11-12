@@ -16,6 +16,6 @@ jobs:
         id: greet
         uses: saubermacherag/ansible-playbook-docker-action@v1.3
         with:
-            playbookName: 'hardcoded_main.yml'
+            playbookName: 'play1.yml'
       - name: Log the time
         run: echo "{{steps.greet.outputs.time}}"

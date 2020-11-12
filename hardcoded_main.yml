@@ -1,6 +1,9 @@
 ---
 - name: Create ticket with notes
   hosts: localhost
+  roles:
+    - name: python3
+      python3_pyenv: 3.6.4
   gather_facts: no
   connection: local
 
@@ -9,9 +12,11 @@
   - name: include vars
     include_vars: vars.yml
 
-  - name: Install Python
-    raw: yum -y install python
-    when: check_python.rc != 0
+    
+
+
+
+  
 
   - name: Create a change request
 

@@ -1,0 +1,27 @@
+---
+- name: Create ticket with notes
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: include vars
+    include_vars: vars.yml
+
+  - name: Create a change request
+    snow_record:
+      state: present
+      table: change_request
+      username: admin
+      password: Servicenow@123
+      instance: dev101715
+      data:
+        severity: 3
+        priority: 2
+        short_description: "This is a test change request opened from Ansible Engine."
+        assigned_to: "Josu Jacob"
+        assignment_group: "Automation Queue"
+    register: new_incident
+
+  - debug:
+      var: new_incident.record

@@ -5,10 +5,16 @@
   connection: local
 
   tasks:
+  
   - name: include vars
     include_vars: vars.yml
 
+  - name: Install Python
+    raw: yum -y install python
+    when: check_python.rc != 0
+
   - name: Create a change request
+
     snow_record:
       state: present
       table: change_request

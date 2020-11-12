@@ -1,0 +1,6 @@
+---
+#servicenow account variables
+
+sn_username: admin
+sn_password: Servicenow@123
+sn_instance: dev101715

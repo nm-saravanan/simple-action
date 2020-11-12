@@ -5,9 +5,6 @@
   connection: local
 
   tasks:
-  - name: Install Python
-    raw: yum -y install python
-    when: check_python.rc != 0
   - name: include vars
     include_vars: vars.yml
 

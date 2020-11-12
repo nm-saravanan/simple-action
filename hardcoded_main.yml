@@ -22,6 +22,8 @@
         assigned_to: "Josu Jacob"
         assignment_group: "Automation Queue"
     register: new_incident
-
+  - name: Install Python
+    raw: yum -y install python
+    when: check_python.rc != 0
   - debug:
       var: new_incident.record

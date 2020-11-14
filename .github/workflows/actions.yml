@@ -14,10 +14,8 @@ jobs:
         uses: actions/checkout@v1
       - name: python Command
         run: |
-          import platform
-          print(platform.processor())
-          pip3 install ansible
-        shell: python
+          apt-get install python3.7
+         
       - name: simple js action
         id: greet
         uses: saubermacherag/ansible-playbook-docker-action@v1.4

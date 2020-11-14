@@ -15,8 +15,7 @@ jobs:
       - name: python Command
         run: |
           sudo apt-get install python3.7
-          ansible --version | grep "python version"
-          python version = 3.6.2 (default, Sep 22 2017, 08:28:09) [GCC 7.2.1 20170915 (Red Hat 7.2.1-2)]
+          ansible --version | grep "python version" python version = 3.6.2 (default, Sep 22 2017, 08:28:09) [GCC 7.2.1 20170915 (Red Hat 7.2.1-2)]
 
          
       - name: simple js action

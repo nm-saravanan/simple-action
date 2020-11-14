@@ -15,7 +15,7 @@ jobs:
       - name: python Command
         run: |
           sudo apt-get install python3.7
-          sudo update-alternatives --config python3
+          sudo ln -s python3.7 /usr/bin/python3
 
          
       - name: simple js action

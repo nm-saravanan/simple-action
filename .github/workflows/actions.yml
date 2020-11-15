@@ -6,7 +6,7 @@ jobs:
   run-action:
     runs-on: ubuntu-latest
     container: 
-      image: python:2
+      image: python:3
     steps:
       - name: pip install
         run: pip install pysnow

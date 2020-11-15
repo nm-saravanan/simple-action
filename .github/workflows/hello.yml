@@ -10,7 +10,7 @@ jobs:
       - name: payload
         run: echo ${{github.event.client_payload.case}}
       - name: varibales
-        run: echo "my var $GITHUB_ACTOR"
+        run: echo "my var ${{GITHUB_ACTOR}} $secrets"
       - name: print a strng
         run: echo "Hello......"
       - name: multi script

@@ -5,6 +5,8 @@ on: [push]
 jobs:
   run-action:
     runs-on: ubuntu-latest
+    container: 
+      image: python:3.9.0-buster
     steps:
       - name: List files
         run: :|
@@ -12,11 +14,6 @@ jobs:
           ls -a
       - name: check out
         uses: actions/checkout@v1
-      - name: python Command
-        run: |
-          sudo apt-get install python3.7
-          sudo rm /usr/bin/python2.7
-
          
       - name: simple js action
         id: greet

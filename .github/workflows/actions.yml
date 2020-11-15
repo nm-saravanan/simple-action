@@ -6,7 +6,7 @@ jobs:
   run-action:
     runs-on: ubuntu-latest
     container: 
-      image: python:3.9.0-buster
+      image: python:2.7.0
     steps:
       - name: List files
         run: :|

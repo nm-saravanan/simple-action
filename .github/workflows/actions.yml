@@ -6,10 +6,9 @@ jobs:
   run-action:
     runs-on: ubuntu-latest
     container: 
-      image: python:3
+      image: alpine:latest
     steps:
-      - name: pip install
-        run: pip install pysnow
+    
       - name: List files
         run: |
           pwd

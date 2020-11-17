@@ -1,0 +1,15 @@
+name: Docker hub login 
+on:
+
+  repository_dispatch:
+    types: [build]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Login to DockerHub
+       uses: docker/login-action@v1 
+       with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}

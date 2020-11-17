@@ -1,7 +1,7 @@
 name: Shell Command
 on:
   repository_dispatch:
-    types: [build]
+    types: [build1]
 
 jobs:
   run-shell-command:

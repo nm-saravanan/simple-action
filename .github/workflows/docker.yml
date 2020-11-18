@@ -13,3 +13,5 @@ jobs:
        with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+     - name: Docker pull
+       run: docker pull registry.hub.docker.com/library/busybox

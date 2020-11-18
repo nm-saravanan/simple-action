@@ -13,13 +13,13 @@ jobs:
        with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-     - name: Docker pull
-       run: docker pull registry.hub.docker.com/library/alpine
+     #- name: Docker pull
+      # run: docker pull registry.hub.docker.com/library/alpine
      - name: install kubectl
        run: |
         curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
         chmod +x ./kubectl
         sudo mv ./kubectl /usr/local/bin/kubectl
         kubectl version --client
-        kubectl apply -f ./k8s
+        kubectl config view
     

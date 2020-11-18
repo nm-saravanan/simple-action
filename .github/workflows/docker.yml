@@ -15,6 +15,6 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
      - name: Docker pull
        run: docker pull registry.hub.docker.com/library/alpine
-     - name: mysql version
-       run: mysql -V
+     - name: rabbitmqctl version
+       run: rabbitmqctl version
      

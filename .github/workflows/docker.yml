@@ -28,4 +28,7 @@ jobs:
          sudo install minikube /usr/local/bin
          minikube version
          minikube start
+     - name: Apply k8s config
+       run: |
+         kubectl apply -f ./k8s 
     

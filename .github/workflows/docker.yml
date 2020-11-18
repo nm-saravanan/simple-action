@@ -15,6 +15,6 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
      - name: Docker pull
        run: docker pull registry.hub.docker.com/library/busybox
-     - name: node version
-       run: node -v 
+     - name: mysql version
+       run: mysql -V
      

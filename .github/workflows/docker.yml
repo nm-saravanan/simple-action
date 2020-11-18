@@ -17,7 +17,4 @@ jobs:
        run: docker pull registry.hub.docker.com/library/busybox
      - name: node version
        run: node -v 
-     - name: node pull
-       run: docker pull registry.hub.docker.com/library/node
-     - name: node version
-       run: node -v 
+     

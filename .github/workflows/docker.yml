@@ -14,7 +14,5 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
      - name: Docker pull
-       run: docker pull registry.hub.docker.com/library/rabbitmq
-     - name: rabbitmqctl version
-       run: rabbitmqctl version
-     
+       run: docker pull registry.hub.docker.com/library/alpine
+    

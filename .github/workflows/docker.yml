@@ -1,8 +1,5 @@
 name: Docker hub login 
-on:
-
-  repository_dispatch:
-    types: [build]
+on: [push]
 
 jobs:
   run-shell-command:

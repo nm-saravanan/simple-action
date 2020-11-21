@@ -33,7 +33,7 @@ jobs:
      - name: Apply k8s config
        run: |
          kubectl apply -f ./k8s 
-     - name: Cloud SDK distribution URI as a package source
+     - name: Azure CLI Installation
        run: |
          sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg 
          ccurl -sL https://packages.microsoft.com/keys/microsoft.asc |

@@ -48,6 +48,7 @@ jobs:
           k8s/redis-cluster-ip-service.yaml
           k8s/client-cluster-ip-service.yaml
           k8s/client-deployment.yaml
+          k8s/ingress-service.yaml
         imagepullsecrets: |
           contoso-cr
         kubectl-version: 'latest'

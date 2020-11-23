@@ -47,6 +47,8 @@ jobs:
         imagepullsecrets: |
           contoso-cr
         kubectl-version: 'latest'
-    - run: |
-        docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}
-        docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}
+
+    - uses: azure/setup-helm@v1
+      with:
+        id: install
+ 

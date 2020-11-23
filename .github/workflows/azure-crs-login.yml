@@ -27,6 +27,16 @@ jobs:
         resource-group: 'digitalai-demo-23-11-2020'
         cluster-name: 'digitalai-cluster-demo'
         id: login
+
+    - name: Set imagePullSecret
+      uses: azure/k8s-create-secret@v1
+      with:
+        namespace: 'myapp'
+        container-registry-url: 'index.docker.io'
+        container-registry-username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        container-registry-password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        secret-name: 'contoso-cr'
+        id: create-secret
     - run: |
         docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}
         docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}

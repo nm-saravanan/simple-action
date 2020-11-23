@@ -1,5 +1,7 @@
-on: [push]
+on:
 
+  repository_dispatch:
+    types: [build]
 jobs:
   build:
     runs-on: ubuntu-latest

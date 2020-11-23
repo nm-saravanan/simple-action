@@ -31,7 +31,7 @@ jobs:
     - name: Set imagePullSecret
       uses: azure/k8s-create-secret@v1
       with:
-        namespace: 'myapp'
+        namespace: 'default'
         container-registry-url: 'containerregistry.contoso.com'
         container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
         container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}

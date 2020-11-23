@@ -1,7 +1,5 @@
-on:
+on: [push]
 
-  repository_dispatch:
-    types: [build]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -44,11 +42,11 @@ jobs:
       with:
         namespace: 'default'
         manifests: |
-          k8s/redis-deployment.yaml
-          k8s/redis-cluster-ip-service.yaml
-          k8s/client-cluster-ip-service.yaml
-          k8s/client-deployment.yaml
-          k8s/ingress-service.yaml
+          k8s/hello-world-ingress.yaml
+          k8s/aks-helloworld-one.yaml
+          k8s/aks-helloworld-two.yaml
+          
+          
         imagepullsecrets: |
           contoso-cr
         kubectl-version: 'latest'

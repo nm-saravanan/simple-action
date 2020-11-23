@@ -21,6 +21,12 @@ jobs:
         k8s-url: ${{ secrets.K8S_URL }} 
         k8s-secret: ${{ secrets.K8S_SECRECT }}
         id: setcontext
+    - uses: azure/aks-set-context@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}' # Azure credentials
+        resource-group: 'digitalai-demo-23-11-2020'
+        cluster-name: 'digitalai-cluster-demo'
+        id: login
     - run: |
         docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}
         docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}

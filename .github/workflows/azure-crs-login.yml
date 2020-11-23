@@ -44,6 +44,8 @@ jobs:
         manifests: |
           k8s/redis-deployment.yaml
           k8s/redis-cluster-ip-service.yaml
+          k8s/client-cluster-ip-service.yaml
+          k8s/client-deployment.yaml
         imagepullsecrets: |
           contoso-cr
         kubectl-version: 'latest'

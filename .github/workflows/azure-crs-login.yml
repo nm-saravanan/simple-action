@@ -32,9 +32,9 @@ jobs:
       uses: azure/k8s-create-secret@v1
       with:
         namespace: 'myapp'
-        container-registry-url: 'index.docker.io'
-        container-registry-username: ${{ secrets.DOCKER_HUB_USERNAME }}
-        container-registry-password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        container-registry-url: 'containerregistry.contoso.com'
+        container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
+        container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
         secret-name: 'contoso-cr'
         id: create-secret
     - run: |

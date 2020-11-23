@@ -19,7 +19,6 @@ jobs:
       with:
         method: service-account
         k8s-url: ${{ secrets.K8S_URL }} 
-        k8s-secret: ${{ secrets.K8S_SECRECT }}
         id: setcontext
     - run: |
         docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}

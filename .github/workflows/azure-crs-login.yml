@@ -37,6 +37,16 @@ jobs:
         container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
         secret-name: 'contoso-cr'
         id: create-secret
+
+    - uses: Azure/k8s-deploy@v1
+      with:
+        namespace: 'default'
+        manifests: |
+          k8s/redis-deployment.yaml
+          k8s/redis-cluster-ip-service.yaml
+        imagepullsecrets: |
+          contoso-cr
+        kubectl-version: 'latest'
     - run: |
         docker build . -t contoso.azurecr.io/k8sdemo:${{ github.sha }}
         docker push contoso.azurecr.io/k8sdemo:${{ github.sha }}

@@ -1,5 +1,5 @@
 name: Docker hub login 
-on: [push]
+on: [pull_request]
 
 jobs:
   run-shell-command:
@@ -36,4 +36,5 @@ jobs:
          ccurl -sL https://packages.microsoft.com/keys/microsoft.asc |
          gpg --dearmor |
          sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
-    
+
+       

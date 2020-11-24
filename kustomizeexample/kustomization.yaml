@@ -1,0 +1,4 @@
+resources:
+  - aks-helloworld-one.yaml
+  - aks-helloworld-two.yaml
+  - hello-world-ingress.yaml

@@ -59,7 +59,7 @@ jobs:
         id: install
     - uses: azure/k8s-bake@v1
       with:
-        renderEngine: 'kompose'
-       # dockerComposeFile: './docker-compose.yml'
-        kompose-version: 'latest'     
+        renderEngine: 'kustomize'
+        kustomizationPath: './kustomizeexample/'
+        kubectl-version: 'latest'   
  

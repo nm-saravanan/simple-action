@@ -44,9 +44,10 @@ jobs:
       with:
         namespace: 'default'
         manifests: |
-          k8s/hello-world-ingress.yaml
+         
           k8s/aks-helloworld-one.yaml
           k8s/aks-helloworld-two.yaml
+          k8s/hello-world-ingress.yaml
           
           
         imagepullsecrets: |
@@ -56,4 +57,9 @@ jobs:
     - uses: azure/setup-helm@v1
       with:
         id: install
+    - uses: azure/k8s-bake@v1
+      with:
+        renderEngine: 'kompose'
+       # dockerComposeFile: './docker-compose.yml'
+        kompose-version: 'latest'     
  

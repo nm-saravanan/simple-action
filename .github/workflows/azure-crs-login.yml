@@ -59,7 +59,7 @@ jobs:
         id: install
     - name: ingress-Helm
       run: |
-        helm uninstall nginx-ingress-ingress-nginx-controller
+        kubectl delete services
       
  
  

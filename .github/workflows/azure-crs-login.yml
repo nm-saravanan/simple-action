@@ -6,11 +6,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     
-    - uses: Azure/docker-login@v1
-      with:
-        login-server: contoso.azurecr.io
-        username: ${{ secrets.REGISTRY_USERNAME }}
-        password: ${{ secrets.REGISTRY_PASSWORD }}
+    #- uses: Azure/docker-login@v1
+     # with:
+      #  login-server: contoso.azurecr.io
+       # username: ${{ secrets.REGISTRY_USERNAME }}
+        #password: ${{ secrets.REGISTRY_PASSWORD }}
     - uses: azure/setup-kubectl@v1
       with:
         #version: '<version>' # default is latest stable
@@ -24,9 +24,11 @@ jobs:
     - uses: azure/aks-set-context@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}' # Azure credentials
-        resource-group: 'digitalai-demo-23-11-2020'
-        cluster-name: 'digitalai-cluster-demo'
+        resource-group: 'cloud-shell-storage-centralindia'
+        cluster-name: 'demo-24-11on'
         id: login
+        run: |
+          echo: REGISTRY_USERNAME::: ${{ secrets.REGISTRY_USERNAME }}
 
     - name: Set imagePullSecret
       uses: azure/k8s-create-secret@v1

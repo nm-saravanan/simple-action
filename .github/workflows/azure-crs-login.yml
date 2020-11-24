@@ -57,9 +57,7 @@ jobs:
     - uses: azure/setup-helm@v1
       with:
         id: install
-    - name: ingress-Helm
-      run: |
-        kubectl delete services
+   
       
  
  

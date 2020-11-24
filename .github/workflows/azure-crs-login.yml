@@ -57,9 +57,5 @@ jobs:
     - uses: azure/setup-helm@v1
       with:
         id: install
-    - uses: azure/k8s-bake@v1
-      with:
-        renderEngine: 'kustomize'
-        kustomizationPath: './kustomizeexample/'
-        kubectl-version: 'latest'   
+ 
  
